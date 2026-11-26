@@ -11,7 +11,7 @@ This folder contains one automated UI test for the Jetsnack Android app, written
 
 ## What the test does?
 
-The flow follows test case TC-01 from `QA_Mobile_Take-Home_Assignment.md` word for word.
+The flow follows test case TC-01 from my QA take-home document word for word.
 
 - **Preconditions:** App is launched. The "Home" screen is shown.
 - **Steps:**
@@ -37,13 +37,13 @@ When BUG-02 is fixed, the same file should pass with no changes. To check that a
 Requirements: Java 17 or newer, the [Maestro CLI](https://docs.maestro.dev/getting-started/installing-maestro), Android SDK platform tools (`adb`), and an Android emulator or a USB device with USB debugging.
 
 1. Start an emulator or connect a device. `adb devices` must list it.
-2. Build and install the app from the `Jetsnack` folder:
+2. Get the app: clone [android/compose-samples](https://github.com/android/compose-samples), check out the commit `09aae2013b3e5897f9679e2b7539f505f4f6f7f6`, and install the Jetsnack app from its `Jetsnack` folder:
    ```
    ./gradlew installDebug
    ```
-3. Run the test from the `Jetsnack` folder:
+3. Clone this repository and run the test from its main folder:
    ```
-   maestro test automation/flows/tc01_open_filters_from_search.yaml
+   maestro test flows/tc01_open_filters_from_search.yaml
    ```
    On Windows in Git Bash, use `maestro.bat` instead of `maestro`.
 
