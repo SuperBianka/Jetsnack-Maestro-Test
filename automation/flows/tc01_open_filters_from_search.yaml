@@ -1,0 +1,28 @@
+# TC-01: Verify that the "Filters" modal opens from the "Filters" icon on the "Search" screen
+# Priority: High
+appId: com.example.jetsnack
+name: TC-01 Verify that the Filters modal opens from the Filters icon on the Search screen
+tags:
+  - smoke
+---
+# Preconditions: App is launched. The "Home" screen is shown.
+- launchApp:
+    clearState: true
+- assertVisible: "Delivery to 1600 Amphitheater Way"
+
+# Step 1: Tap the "Search" icon in the bottom navigation bar.
+- tapOn: "Search"
+
+# Step 2: Tap the "Filters" icon on the "Search" screen.
+# BUG-02: This step fails on the current build, because only the "Home" screen has the "Filters" icon.
+- tapOn: "Filters"
+
+# Expected result: The "Filters" modal opens. It shows the title "Filters", the "Close" button and the sections "Sort", "Price", "Category" and "LifeStyle".
+- assertVisible: "Filters"
+- assertVisible: "Close"
+- assertVisible: "Sort"
+- assertVisible: "Price"
+- assertVisible: "Category"
+- scrollUntilVisible:
+    element: "LifeStyle"
+- assertVisible: "LifeStyle"
